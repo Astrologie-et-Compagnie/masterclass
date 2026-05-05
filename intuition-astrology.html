@@ -1,0 +1,329 @@
+<style>
+:root {
+  --bg: #FAF7F2;
+  --card: #F5F0EA;
+  --gold: #A68E45;
+  --gold-lt: rgba(166,142,69,0.25);
+  --navy: #203A4D;
+  --green: #268A45;
+  --text: #2C3B32;
+  --muted: #6B7F74;
+  --border: rgba(166,142,69,0.28);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: Georgia,'Times New Roman',serif; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem; }
+
+.cover {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  border: 0.5px solid var(--border);
+  background: var(--card);
+  margin-bottom: 2.5rem;
+}
+.cover-moon { margin-bottom: 1.25rem; }
+.brand-tag {
+  font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.5rem;
+}
+.cover h1 {
+  font-family: Palatino,'Palatino Linotype',Georgia,serif;
+  font-size: 30px; font-weight: 400; color: var(--navy);
+  line-height: 1.25; margin-bottom: 0.4rem;
+}
+.cover-sub {
+  font-size: 14px; color: var(--muted); font-style: italic; margin-bottom: 1rem;
+}
+.cover-desc {
+  font-size: 14px; color: var(--text); max-width: 460px;
+  margin: 0 auto 1.25rem; line-height: 1.7;
+}
+.astro-pill {
+  display: inline-block; font-size: 10px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--green);
+  border: 0.5px solid var(--green); padding: 5px 18px;
+}
+
+.divider { text-align: center; color: var(--gold); font-size: 12px; letter-spacing: 0.4em; margin: 2rem 0; opacity: 0.6; }
+
+.section { margin-bottom: 2.5rem; }
+.sec-label {
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 3px;
+}
+.sec-title {
+  font-family: Palatino,'Palatino Linotype',Georgia,serif;
+  font-size: 20px; font-weight: 400; color: var(--navy);
+  border-bottom: 0.5px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 0.6rem;
+}
+.sec-intro { font-size: 13.5px; color: var(--muted); font-style: italic; margin-bottom: 1.25rem; line-height: 1.7; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.card {
+  background: var(--card); border: 0.5px solid var(--border);
+  padding: 1.25rem; margin-bottom: 1rem;
+}
+.card-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+.card-title { font-family: Palatino,'Palatino Linotype',Georgia,serif; font-size: 15px; font-style: italic; color: var(--navy); margin-bottom: 4px; }
+.card-quality { font-size: 12px; color: var(--muted); margin-bottom: 0.9rem; }
+.card-num { font-size: 22px; color: var(--gold); opacity: 0.35; padding-top: 4px; }
+
+.prompt { font-size: 13px; color: var(--navy); font-style: italic; margin-bottom: 0.5rem; }
+
+textarea {
+  width: 100%; background: #fff; border: 0.5px solid var(--border);
+  padding: 0.75rem; font-family: Georgia,serif; font-size: 13px;
+  color: var(--text); resize: vertical; outline: none; line-height: 1.6;
+}
+textarea:focus { border-color: var(--gold); }
+
+.line-input {
+  width: 100%; background: transparent; border: none;
+  border-bottom: 0.5px solid var(--border); padding: 7px 0;
+  font-family: Georgia,serif; font-size: 13px; color: var(--text);
+  outline: none; margin-bottom: 0.6rem;
+}
+.line-input:focus { border-bottom-color: var(--gold); }
+
+.rule { height: 0.5px; background: var(--border); margin: 0.6rem 0; }
+
+.check-row { display: flex; align-items: flex-start; gap: 12px; margin: 0.5rem 0; }
+.check-text { flex: 1; font-size: 13px; color: var(--text); line-height: 1.5; }
+.check-text strong { color: var(--navy); font-weight: 500; }
+.radio-group { display: flex; gap: 1rem; padding-top: 2px; }
+.radio-label {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 13px; color: var(--muted); cursor: pointer;
+}
+.radio-label input { accent-color: var(--gold); cursor: pointer; }
+
+.note {
+  font-size: 12px; color: var(--muted); font-style: italic;
+  border-left: 2px solid var(--gold); padding-left: 0.75rem; margin-top: 1rem; line-height: 1.6;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead th {
+  background: var(--navy); color: #FAF7F2; font-weight: 400;
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 10px 12px; text-align: left; border: none;
+}
+tbody td {
+  padding: 8px 10px; border: 0.5px solid var(--border); vertical-align: top;
+}
+tbody tr:nth-child(even) td { background: var(--card); }
+tbody td input {
+  width: 100%; background: transparent; border: none;
+  font-family: Georgia,serif; font-size: 12px; color: var(--text); outline: none;
+}
+
+.footer {
+  text-align: center; font-size: 10px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold); margin-top: 3rem;
+  padding-top: 1.5rem; border-top: 0.5px solid var(--border); opacity: 0.65;
+}
+
+@media print {
+  .wrap { padding: 1rem; }
+  textarea, .line-input, tbody td input { background: transparent; }
+}
+</style>
+
+<div class="wrap">
+
+  <div class="cover">
+    <div class="cover-moon">
+      <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M34 7 C21 7 12 16.5 12 27.5 C12 38.5 21 48 34 48 C25 43.5 19 36 19 27.5 C19 19 25 12 34 7Z" fill="#A68E45" opacity="0.75"/>
+        <circle cx="36" cy="9" r="1.5" fill="#A68E45" opacity="0.9"/>
+        <circle cx="9" cy="18" r="1" fill="#A68E45" opacity="0.7"/>
+        <circle cx="42" cy="32" r="1.2" fill="#A68E45" opacity="0.7"/>
+        <circle cx="14" cy="38" r="0.8" fill="#268A45" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="brand-tag">The Cozy Cosmic Company</div>
+    <h1>The Discernment Workbook</h1>
+    <p class="cover-sub">Live Session Companion</p>
+    <p class="cover-desc">Intuition, Mind, or Projection? How to tell the difference, with astrology as your anchor.</p>
+    <span class="astro-pill">Pluto Rx in Aquarius &nbsp;·&nbsp; Mercury Square Pluto</span>
+  </div>
+
+  <div class="divider">* · · * · · *</div>
+
+  <div class="section">
+    <p class="sec-label">Section 1</p>
+    <h2 class="sec-title">The Induction: Finding the Still Point</h2>
+    <p class="sec-intro">Use this space during the 5-minute centering exercise to note the "before" and "after" of your internal state.</p>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-label">Mercury / Pluto</div>
+        <div class="card-title">The Mental Noise</div>
+        <p class="prompt">Describe the current buzz in your head (words, loops, speed):</p>
+        <textarea rows="6" placeholder="What is running through your mind right now..."></textarea>
+      </div>
+      <div class="card">
+        <div class="card-label">Solar Center</div>
+        <div class="card-title">The Heart Sanctuary</div>
+        <p class="prompt">Describe the sensation in your chest or gut after the descent:</p>
+        <textarea rows="6" placeholder="What do you feel in your body now..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">* · · * · · *</div>
+
+  <div class="section">
+    <p class="sec-label">Section 2</p>
+    <h2 class="sec-title">The Trinity of Voices: The Map</h2>
+    <p class="sec-intro">As we go through the framework, identify which voice has been loudest for you this week.</p>
+
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div style="flex:1;">
+          <div class="card-label">Mercury / Saturn</div>
+          <div class="card-title">"I should... because it's logical."</div>
+          <div class="card-quality">Quality: Verbal, linear, cautious.</div>
+        </div>
+        <div class="card-num">I</div>
+      </div>
+      <p class="prompt">When did this voice speak this week?</p>
+      <textarea rows="3" placeholder="The Mind..."></textarea>
+    </div>
+
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div style="flex:1;">
+          <div class="card-label">Pluto / South Node</div>
+          <div class="card-title">"I must... because I'm afraid."</div>
+          <div class="card-quality">Quality: Urgent, heavy, obsessive, controlling.</div>
+        </div>
+        <div class="card-num">II</div>
+      </div>
+      <p class="prompt">When did this voice speak this week?</p>
+      <textarea rows="3" placeholder="The Projection..."></textarea>
+    </div>
+
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div style="flex:1;">
+          <div class="card-label">Uranus / Neptune</div>
+          <div class="card-title">"It is..."</div>
+          <div class="card-quality">Quality: Neutral, sudden, quiet, non-emotional.</div>
+        </div>
+        <div class="card-num">III</div>
+      </div>
+      <p class="prompt">When did this voice speak this week?</p>
+      <textarea rows="3" placeholder="The Intuition..."></textarea>
+    </div>
+  </div>
+
+  <div class="divider">* · · * · · *</div>
+
+  <div class="section">
+    <p class="sec-label">Section 3</p>
+    <h2 class="sec-title">The Live Practice: The "Pluto-Buster" Audit</h2>
+
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="card-label">The Inquiry</div>
+      <p class="prompt" style="margin-top:4px;">Write down one thing you feel "certain" or "obsessed" about right now:</p>
+      <textarea rows="4" placeholder="My thought / fear / hunch..."></textarea>
+    </div>
+
+    <div class="card">
+      <div class="card-label">The 4-Point Discernment Check</div>
+      <div style="margin-top:0.9rem;">
+
+        <div class="check-row">
+          <div class="check-text"><strong>1. Is it Urgent?</strong>&nbsp; Must act now to survive.</div>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="q1"> Yes</label>
+            <label class="radio-label"><input type="radio" name="q1"> No</label>
+          </div>
+        </div>
+        <div class="rule"></div>
+
+        <div class="check-row">
+          <div class="check-text"><strong>2. Is it Controlling?</strong>&nbsp; Requires others to change.</div>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="q2"> Yes</label>
+            <label class="radio-label"><input type="radio" name="q2"> No</label>
+          </div>
+        </div>
+        <div class="rule"></div>
+
+        <div class="check-row">
+          <div class="check-text"><strong>3. Is it Repetitive?</strong>&nbsp; A loop or a "stuck" thought.</div>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="q3"> Yes</label>
+            <label class="radio-label"><input type="radio" name="q3"> No</label>
+          </div>
+        </div>
+        <div class="rule"></div>
+
+        <div class="check-row">
+          <div class="check-text"><strong>4. Is it Sharp?</strong>&nbsp; Feels like a weapon or a defense.</div>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="q4"> Yes</label>
+            <label class="radio-label"><input type="radio" name="q4"> No</label>
+          </div>
+        </div>
+      </div>
+      <div class="note">If you answered "Yes" more than twice, this is likely Mercury-Pluto Noise rather than Soul Signal.</div>
+    </div>
+  </div>
+
+  <div class="divider">* · · * · · *</div>
+
+  <div class="section">
+    <p class="sec-label">Section 4</p>
+    <h2 class="sec-title">The Shift: Activating the Anchor</h2>
+    <p class="sec-intro">If the previous exercise revealed noise, use these prompts to shift the frequency.</p>
+
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="card-label">Mercury in Taurus</div>
+      <div class="card-title">The Grounding</div>
+      <p class="prompt">What are the physical, objective facts of this situation? List 3 things you can see or touch:</p>
+      <input class="line-input" type="text" placeholder="1.">
+      <input class="line-input" type="text" placeholder="2.">
+      <input class="line-input" type="text" placeholder="3.">
+    </div>
+
+    <div class="card">
+      <div class="card-label">Jupiter Trine Pluto</div>
+      <div class="card-title">The Evolutionary Vision</div>
+      <p class="prompt">If I removed the fear of losing control, what is the most expansive, integral next step?</p>
+      <textarea rows="5" placeholder="My new perspective..."></textarea>
+    </div>
+  </div>
+
+  <div class="divider">* · · * · · *</div>
+
+  <div class="section">
+    <p class="sec-label">Post-Workshop Practice</p>
+    <h2 class="sec-title">Daily Discernment Log</h2>
+    <p class="sec-intro">Use this daily to track your growth during the Pluto Retrograde period.</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:18%;">Date / Moon Phase</th>
+          <th style="width:34%;">The Feeling / Hunch</th>
+          <th style="width:28%;">The Astro-Weather</th>
+          <th style="width:20%;">Signal or Noise?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">The Cozy Cosmic Company &nbsp;·&nbsp; thecozyastrohq.com</div>
+
+</div>
